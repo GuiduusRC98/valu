@@ -465,7 +465,7 @@ input.nosubmit {
   line-height: 5rem;
   border-radius: 20px;
   font-size: 2rem;
-  width: 75%;
+  width: 100%;
   border: 2px solid var(--pink);
   background: #fff;
   color:  var(--pink);

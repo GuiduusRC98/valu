@@ -57,7 +57,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background: #fff;
+  background: var(--pink);
   padding: 0.5rem 9%;
   display: flex;
   align-items: center;
@@ -65,10 +65,9 @@ header {
   z-index: 1000;
   box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
-
 header .logo {
   font-size: 3rem;
-  color: #333;
+  color: #fff;
   font-weight: bolder;
 }
 header .logo span {
@@ -78,22 +77,24 @@ header .logo span {
 header .navbar a {
   font-size: 2rem;
   padding: 0 1.5rem;
-  color: #666;
+  color: #fff;
 }
 
 header .navbar a:hover {
-  color: var(--pink);
+  color: #dfdfdf;
 }
 
 header .icons a {
   font-size: 2.5rem;
   padding-left: 1.5rem;
   margin-left: 1.5rem;
-  color: #333;
+  color: var(--pink);
+  cursor: pointer;
 }
 
 header .icons a:hover {
   color: var(--pink);
+  cursor: pointer;
 }
 
 header #toggler {
@@ -109,7 +110,6 @@ header .fa-bars {
   border: 0.1rem solid rgba(0, 0, 0, 0.3);
   display: none;
 }
-
 /* Boton de busqueda */
 .container-busqueda {
   display: flex;
@@ -413,7 +413,7 @@ input.nosubmit {
 }
 
 .products .box-container .box {
-  flex: 1 1 30rem;
+  flex: 1 1 40rem;
   box-shadow: 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
@@ -463,7 +463,7 @@ input.nosubmit {
   height: 5rem;
   line-height: 5rem;
   font-size: 2rem;
-  width: 50%;
+  width: 100%;
   background: var(--pink);
   color: #fff;
 }

@@ -23,8 +23,8 @@
       <!-- <a href="#" class="logo">Valentina<span>.</span></a> -->
       <nav class="navbar">
         <a href="../index.html">Incio</a>
-        <a href="#">Tienda</a>
-        <a href="./sobremi.html">Sobre Mi</a>
+        <a href="./tienda.html">catalogo</a>
+<!--         <a href="./pages/sobremi">Sobre Mi</a> -->
         <a href="./contacto.html">Contacto</a>
       </nav>
 
@@ -150,17 +150,46 @@
         <div class="box">
           <h3>Links rapidos</h3>
           <a href="../index.html">Inicio</a>
-          <a href="tienda.html">Tienda</a>
-          <a href="sobremi.html">Sobre mi</a>
-          <a href="contacto.html">Contacto</a>
+          <a href="./tienda.html">Catalogo</a>
+          <!-- <a href="sobremi.html">Sobre mi</a> -->
+          <a href="./contacto.html">Contacto</a>
         </div>
 
         <div class="box">
           <h3>Contacto</h3>
-          <a href="#">+341-3618450</a>
-          <a href="#">vpinchiero@gmail.com</a>
+          <a href="https://www.instagram.com/valii_09/"><i class="fab fa-instagram"> Instagram</i></a>
+        <a href="#" id="correo"><i class="fa-sharp fa-solid fa-at">vpinchiero@gmail.com</i></a>
+        <a href="#">Rosario, Santa Fe</a>
           <a href="#">Rosario, Santa Fe</a>
         </div>
+  
+        <script>
+          // Obtén el elemento de correo electrónico por su ID
+          var correoElement = document.getElementById("correo");
+  
+          // Agrega un evento de clic al elemento de correo electrónico
+          correoElement.addEventListener("click", function() {
+              // Crea un elemento de entrada de texto temporal
+              var inputElement = document.createElement("input");
+              inputElement.value = correoElement.textContent;
+  
+              // Agrega el elemento de entrada de texto al documento
+              document.body.appendChild(inputElement);
+  
+              // Selecciona el texto en el elemento de entrada de texto
+              inputElement.select();
+              inputElement.setSelectionRange(0, 99999); // Para dispositivos móviles
+  
+              // Copia el texto al portapapeles
+              document.execCommand("copy");
+  
+              // Elimina el elemento de entrada de texto temporal
+              document.body.removeChild(inputElement);
+  
+              // Puedes agregar un mensaje de confirmación si lo deseas
+              alert("Correo electrónico copiado: " + inputElement.value);
+          });
+      </script>
       </div>
 
       <div class="credit">

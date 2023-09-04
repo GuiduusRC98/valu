@@ -413,11 +413,12 @@ input.nosubmit {
 }
 
 .products .box-container .box {
-  flex: 1 1 70rem;
+  flex: 1 1 30rem;
   box-shadow: 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   position: relative;
+  
 }
 .products .box-container .box .discount {
   position: absolute;

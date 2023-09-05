@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="images/icon_valu.png" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
   <title>Inicio</title>
@@ -139,9 +140,7 @@
         <span class="discount"></span>
         <div class="image">
           <div id="imageGallery1" class="carousel">
-            <a href="#" class="prev-arrow">◄</a>
             <img src="./images/carteras/cartera_1.jpeg" alt="" />
-            <a href="#" class="next-arrow">►</a>
           </div>
           <div class="icons">
             <a href="https://ig.me/m/valii_09" target="_blank" class="">Comprar</a>
@@ -193,6 +192,11 @@
       </div>
     </div>
   </section>
+
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img id="modalImage" class="modal-content" alt="">
+  </div>
 
   <!-- contacto -->
   <div class=" container row">

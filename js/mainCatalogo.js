@@ -1,3 +1,4 @@
+// Función constructora para crear objetos de galería
 function Gallery(containerId, imagePaths) {
     this.container = document.getElementById(containerId);
     this.imagePaths = imagePaths;
@@ -19,13 +20,34 @@ function Gallery(containerId, imagePaths) {
     };
 
     // Agrega un evento clic al contenedor para mostrar la siguiente imagen al hacer clic
-    this.container.addEventListener("click", () => this.showNextImage());
+    this.container.addEventListener("click", () => {
+        // Abre el modal con la imagen actual
+        openModal(this.imagePaths[this.currentImageIndex]);
+    });
 
     // Muestra la primera imagen al cargar la página
     this.showNextImage();
 
     // Inicia la rotación automática al crear el objeto de galería
     this.startAutoRotate();
+}
+
+// Función para abrir el modal con una imagen
+function openModal(imagePath) {
+    const modal = document.getElementById("myModal");
+    const modalImage = document.getElementById("modalImage");
+
+    modal.style.display = "block";
+    modalImage.src = imagePath;
+
+    const closeBtn = document.querySelector(".close");
+    closeBtn.addEventListener("click", closeModal);
+}
+
+// Función para cerrar el modal
+function closeModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
 }
 
 // Crea objetos de galería para cada caja

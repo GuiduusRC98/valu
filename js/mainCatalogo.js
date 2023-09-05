@@ -58,16 +58,31 @@ function openModal(imagePaths, initialIndex) {
     function showThumbnails() {
         const thumbnailList = document.getElementById("thumbnailList");
         thumbnailList.innerHTML = "";
-
+    
         for (let i = 0; i < imagePaths.length; i++) {
             const thumbnail = document.createElement("li");
             thumbnail.innerHTML = `<img src="${imagePaths[i]}" alt="" data-index="${i}" />`;
             thumbnail.addEventListener("click", (event) => {
                 currentImageIndex = parseInt(event.target.getAttribute("data-index"));
                 showCurrentImage();
+                updateThumbnailOpacity(thumbnailList, currentImageIndex);
             });
             thumbnailList.appendChild(thumbnail);
         }
+    
+        // Establece la opacidad inicial
+        updateThumbnailOpacity(thumbnailList, currentImageIndex);
+    }
+    
+    function updateThumbnailOpacity(thumbnailList, selectedIndex) {
+        const thumbnails = thumbnailList.querySelectorAll("img");
+        thumbnails.forEach((thumbnail, index) => {
+            if (index === selectedIndex) {
+                thumbnail.classList.add("selected");
+            } else {
+                thumbnail.classList.remove("selected");
+            }
+        });
     }
 
     showThumbnails();

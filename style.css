@@ -359,6 +359,12 @@ input.nosubmit {
 .thumbnail-list img{
   width: 100px;
   height: 100px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.thumbnail-list img.selected {
+  opacity: 1; /* Opacidad completa para la seleccionada */
 }
 .close {
   position: absolute;

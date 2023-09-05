@@ -1,31 +1,42 @@
+function Gallery(containerId, imagePaths) {
+    this.container = document.getElementById(containerId);
+    this.imagePaths = imagePaths;
+    this.currentImageIndex = 0;
 
-    // Función constructora para crear objetos de galería
-    function Gallery(containerId, imagePaths) {
-        this.container = document.getElementById(containerId);
-        this.imagePaths = imagePaths;
-        this.currentImageIndex = 0;
+    this.showNextImage = function () {
+        this.currentImageIndex = (this.currentImageIndex + 1) % this.imagePaths.length;
+        this.container.innerHTML = `<img src="${this.imagePaths[this.currentImageIndex]}" alt="" />`;
+    };
 
-        this.showNextImage = function () {
-            this.currentImageIndex = (this.currentImageIndex + 1) % this.imagePaths.length;
-            this.container.innerHTML = `<img src="${this.imagePaths[this.currentImageIndex]}" alt="" />`;
-        };
+    this.autoRotateInterval = 5000; // Intervalo en milisegundos (en este caso, 5 segundos)
 
-        // Agrega un evento clic al contenedor para mostrar la siguiente imagen al hacer clic
-        this.container.addEventListener("click", () => this.showNextImage());
+    this.startAutoRotate = function () {
+        this.autoRotateIntervalId = setInterval(() => this.showNextImage(), this.autoRotateInterval);
+    };
 
-        // Muestra la primera imagen al cargar la página
-        this.showNextImage();
-    }
+    this.stopAutoRotate = function () {
+        clearInterval(this.autoRotateIntervalId);
+    };
 
-    // Crea objetos de galería para cada caja
-    const gallery1 = new Gallery("imageGallery1", [
-        "./images/carteras/cartera_1_luna.jpeg",
-        "./images/carteras/cartera_2_luna.jpeg",
-        // Agrega más rutas de imágenes según sea necesario
-    ]);
+    // Agrega un evento clic al contenedor para mostrar la siguiente imagen al hacer clic
+    this.container.addEventListener("click", () => this.showNextImage());
 
-    const gallery2 = new Gallery("imageGallery2", [
-        "./images/carteras/cartera_3.jpeg",
-        "./images/carteras/cartera_4.jpeg",
-        // Agrega más rutas de imágenes según sea necesario
-    ]);
+    // Muestra la primera imagen al cargar la página
+    this.showNextImage();
+
+    // Inicia la rotación automática al crear el objeto de galería
+    this.startAutoRotate();
+}
+
+// Crea objetos de galería para cada caja
+const gallery1 = new Gallery("imageGallery1", [
+    "./images/carteras/cartera_1_luna.jpeg",
+    "./images/carteras/cartera_2_luna.jpeg",
+    // Agrega más rutas de imágenes según sea necesario
+]);
+
+const gallery2 = new Gallery("imageGallery2", [
+    "./images/carteras/cartera_3.jpeg",
+    "./images/carteras/cartera_4.jpeg",
+    // Agrega más rutas de imágenes según sea necesario
+]);

@@ -124,3 +124,11 @@ const gallery4 = new Gallery("imageGallery4", [
     "../images/carteras/cartera_croco_4.jpeg",
     // Agrega más rutas de imágenes según sea necesario
 ])
+
+const gallery5 = new Gallery("imageGallery5", [
+    "../images/carteras/cartera_allblack_1.jpeg",
+    "../images/carteras/cartera_allblack_2.jpeg",
+    "../images/carteras/cartera_allblack_3.jpeg",
+    "../images/carteras/cartera_allblack_4.jpeg",
+    // Agrega más rutas de imágenes según sea necesario
+])

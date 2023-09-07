@@ -582,6 +582,10 @@ input.nosubmit {
   color: #333;
 }
 
+.products .box-container .box .content p {
+  color: #5a5a5a;
+}
+
 .products .box-container .box .content .price {
   font-size: 2.5rem;
   color: var(--pink);
@@ -761,7 +765,7 @@ input.nosubmit {
   }
 
   .about-left {
-    padding-left: 200px;
+    padding-left: 0px;
     
   }
   .about-left > h3 {
@@ -773,9 +777,7 @@ input.nosubmit {
   .about-right {
     display: none;
   }
-}
-
-@media (max-width: 768px) {
+  
   header .fa-bars {
     display: block;
   }
@@ -823,7 +825,12 @@ input.nosubmit {
     flex-basis: calc(50% - 10px); /* 3 miniaturas por fila */
 }
   .about-left {
-    padding-left: 45px;
+    padding: 0px;
+    
+  }
+
+  .about-left p{
+    max-width: 200px;
     
   }
 

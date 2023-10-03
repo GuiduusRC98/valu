@@ -421,9 +421,11 @@ class Producto {
     const searchTerm = document.getElementById("searchInput").value.toLowerCase();
     const contenedorProductos = document.getElementById("contenedor_productos");
 
-    // Filtra los productos que coincidan con el término de búsqueda
+    // Filtra los productos que coincidan con el término de búsqueda en nombre o descripción
     const productosFiltrados = cp.listaDeProducto.filter((producto) => {
-        return producto.nombre.toLowerCase().includes(searchTerm);
+        const nombreEnMinusculas = producto.nombre.toLowerCase();
+        const descripcionEnMinusculas = producto.descripcion.toLowerCase();
+        return nombreEnMinusculas.includes(searchTerm) || descripcionEnMinusculas.includes(searchTerm);
     });
 
     // Borra el contenido actual del contenedor de productos

@@ -2,6 +2,10 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description"
+    content="Descubre la mejor selección de carteras y productos de maquillaje en Rosario, Argentina. Encuentra productos de alta calidad para realzar tu belleza y complementar tu estilo. ¡Explora nuestra tienda ahora!" />
+<meta name="keywords"
+    content="carteras, maquillaje, Rosario, Argentina, belleza, moda, productos de belleza, carteras de moda, accesorios de moda, compras en línea" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../images/icon_valu.png" />
     <link
@@ -9,7 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../style.css" />
-    <title>Tienda</title>
+    <title>Catalogo - maquillajes</title>
   </head>
 
   <body>
@@ -24,6 +28,8 @@
       <nav class="navbar">
         <a href="../index.html">Incio</a>
         <a href="./carteras.html">Carteras</a>
+        <a href="./rinoneras.html">Riñoneras</a>
+        <a href="./bandoleras.html">Bandoleras</a>
         <a href="./maquillajes.html">Maquillaje importado</a>
         <!--         <a href="./pages/sobremi">Sobre Mi</a> -->
         <a href="./contacto.html">Contacto</a>
@@ -37,119 +43,24 @@
           <input class="nosubmit" type="search" placeholder="Buscar..." />
         </form>
       </div> -->
+      <input type="search" id="searchInput" class="nosubmit" placeholder="Buscar...">
+      <button id="searchButton">Buscar</button>
+
     </header>
     <!-- ultimos productos -->
     <section class="products" id="products">
-  
-        <div class="box-container">
-          <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-              <img src="" alt="" />
-              <div class="icons">
-                <!-- <a href="#" class="fas fa-heart"></a> -->
-                <a href="https://ig.me/m/valii_09" target="_blank" class="">Comprar</a>
-                <!-- <a href="#" class="fas fa-share"></a> -->
-              </div>
-            </div>
-  
-            <div class="content">
-              <h3>Gloss modelo</h3>
-              <p>Descripcion</p>
-              <div class="price">$12.999 <span>$15.999</span></div>
-            </div>
-          </div>
-  
-          <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-              <img src="" alt="" />
-              <div class="icons">
-                <!-- <a href="#" class="fas fa-heart"></a> -->
-                <a href="https://ig.me/m/valii_09" class="">Comprar</a>
-                <!-- <a href="#" class="fas fa-share"></a> -->
-              </div>
-            </div>
-  
-            <div class="content">
-              <h3>Gloss modelo</h3>
-              <p>Descripcion</p>
-              <div class="price">$12.999 <span>$15.999</span></div>
-            </div>
-          </div>
-  
-          <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-              <img src="" alt="" />
-              <div class="icons">
-                <!-- <a href="#" class="fas fa-heart"></a> -->
-                <a href="https://ig.me/m/valii_09" target="_blank" class="">Comprar</a>
-                <!-- <a href="#" class="fas fa-share"></a> -->
-              </div>
-            </div>
-  
-            <div class="content">
-              <h3>Gloss modelo</h3>
-              <p>Descripcion</p>
-              <div class="price">$12.999 <span>$15.999</span></div>
-            </div>
-          </div>
-  
-          <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-              <img src="" alt="" />
-              <div class="icons">
-                <!-- <a href="#" class="fas fa-heart"></a> -->
-                <a href="https://ig.me/m/valii_09" target="_blank" class="">Comprar</a>
-                <!-- <a href="#" class="fas fa-share"></a> -->
-              </div>
-            </div>
-  
-            <div class="content">
-              <h3>Gloss modelo</h3>
-              <p>Descripcion</p>
-              <div class="price">$12.999 <span>$15.999</span></div>
-            </div>
-          </div>
-  
-          <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-              <img src="" alt="" />
-              <div class="icons">
-                <!-- <a href="#" class="fas fa-heart"></a> -->
-                <a href="https://ig.me/m/valii_09" target="_blank" class="">Comprar</a>
-                <!-- <a href="#" class="fas fa-share"></a> -->
-              </div>
-            </div>
-  
-            <div class="content">
-              <h3>Gloss modelo</h3>
-              <p>Descripcion</p>
-              <div class="price">$12.999 <span>$15.999</span></div>
-            </div>
-          </div>
-  
-          <div class="box">
-            <span class="discount">-10%</span>
-            <div class="image">
-              <img src="" alt="" />
-              <div class="icons">
-                <!-- <a href="#" class="fas fa-heart"></a> -->
-                <a href="https://ig.me/m/valii_09" target="_blank" class="">Comprar</a>
-                <!-- <a href="#" class="fas fa-share"></a> -->
-              </div>
-            </div>
-            <div class="content">
-              <h3>Gloss modelo</h3>
-              <p>Descripcion</p>
-              <div class="price">$12.999 <span>$15.999</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <h1 class="heading">Ultimos <span>productos</span></h1>
+
+      <div class="box-container" id="contenedor_productos">
+      </div>
+    </section>
+    <div id="myModal" class="modal">
+      <span class="close">×</span>
+      <img id="modalImage" class="modal-content">
+      <ul id="thumbnailList" class="thumbnails"></ul>
+      <button id="prevBtn"></button>
+      <button id="nextBtn"></button>
+  </div>
     <!--  -->
     <section class="footer">
       <div class="box-container">
@@ -157,6 +68,8 @@
           <h3>Links rapidos</h3>
           <a href="../index.html">Inicio</a>
           <a href="./carteras.html">Carteras</a>
+          <a href="./rinoneras.html">Riñoneras</a>
+          <a href="./bandoleras.html">Bandoleras</a>
           <a href="./maquillajes.html">Maquillajes importados</a>
           <!-- <a href="sobremi.html">Sobre mi</a> -->
           <a href="./contacto.html">Contacto</a>
@@ -165,11 +78,11 @@
         <div class="box">
           <h3>Contacto</h3>
           <a href="https://www.instagram.com/valii_09/"><i class="fab fa-instagram"></i>  Instagram</a>
-          <a href="#" id="correo"><i class="fa-sharp fa-solid fa-at"></i> vpinchiero@gmail.com</a>
+          <a href="#" id="correo"><i class="fa-sharp fa-solid fa-at"></i> <span class="__cf_email__" data-cfemail="790f0910171a11101c0b16391e14181015571a1614">[email&#160;protected]</span></a>
           <a href="#">Rosario, Santa Fe</a>
         </div>
   
-        <script>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
           // Obtén el elemento de correo electrónico por su ID
           var correoElement = document.getElementById("correo");
   
@@ -202,6 +115,6 @@
         Creado por <span>Guido Pezzotta</span> | todos los derechos reservados
       </div>
     </section>
-    <script src="../js/mainCatalogoTiendas.js"></script>
+    <script src="../js/mainCatalogoMaquillaje.js"></script>
   </body>
 </html>

@@ -417,26 +417,32 @@ class Producto {
   cp.updateProduct();
   cp.mostrarNovedad();
 
+  function showSearchButton() {
+    const searchButton = document.getElementById("searchButton");
+    searchButton.style.display = "block";
+  }
+  
+  function hideSearchButton() {
+    const searchButton = document.getElementById("searchButton");
+    searchButton.style.display = "none";
+  }
+  
   function buscarProductos() {
     const searchTerm = document.getElementById("searchInput").value.toLowerCase();
     const contenedorProductos = document.getElementById("contenedor_productos");
-
+  
     // Filtra los productos que coincidan con el término de búsqueda en nombre o descripción
     const productosFiltrados = cp.listaDeProducto.filter((producto) => {
-        const nombreEnMinusculas = producto.nombre.toLowerCase();
-        const descripcionEnMinusculas = producto.descripcion.toLowerCase();
-        return nombreEnMinusculas.includes(searchTerm) || descripcionEnMinusculas.includes(searchTerm);
+      const nombreEnMinusculas = producto.nombre.toLowerCase();
+      const descripcionEnMinusculas = producto.descripcion.toLowerCase();
+      return nombreEnMinusculas.includes(searchTerm) || descripcionEnMinusculas.includes(searchTerm);
     });
-
+  
     // Borra el contenido actual del contenedor de productos
     contenedorProductos.innerHTML = "";
-
+  
     // Muestra los productos filtrados
     productosFiltrados.forEach((producto) => {
-        contenedorProductos.innerHTML += producto.descripcion_Producto();
+      contenedorProductos.innerHTML += producto.descripcion_Producto();
     });
-}
-
-// Agrega un evento click al botón de búsqueda
-const searchButton = document.getElementById("searchButton");
-searchButton.addEventListener("click", buscarProductos);
+  }

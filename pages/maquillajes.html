@@ -44,9 +44,10 @@
         </form>
       </div> -->
       <div class="search-box">
-        <button id="searchButton" class="btn-search"><i class="fas fa-search"></i></button>
-        <input type="search" id="searchInput" class="input-search" placeholder="Buscar...">
+        <input type="search" id="searchInput" class="input-search" placeholder="Buscar..." onfocus="showSearchButton()" onblur="hideSearchButton()">
+        <button id="searchButton" class="btn-search" onclick="buscarProductos()"><i class="fas fa-search"></i></button>
       </div>
+      
 <!-- 
       <input type="search" id="searchInput" class="nosubmit" placeholder="Buscar...">
       <button id="searchButton"><i class="fa fa-search" aria-hidden="true"></i></button>

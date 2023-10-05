@@ -422,15 +422,6 @@ class Producto {
     searchButton.style.display = "block";
   }
   
-  function hideSearchButton() {
-    const searchButton = document.getElementById("searchButton");
-    searchButton.style.display = "none";
-  }
-  
-  function buscarProductos() {
-    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-    const contenedorProductos = document.getElementById("contenedor_productos");
-  
     // Filtra los productos que coincidan con el término de búsqueda en nombre o descripción
     const productosFiltrados = cp.listaDeProducto.filter((producto) => {
       const nombreEnMinusculas = producto.nombre.toLowerCase();

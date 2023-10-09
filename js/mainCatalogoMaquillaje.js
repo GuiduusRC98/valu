@@ -419,16 +419,27 @@ class Producto {
 
   function buscarProductos() {
     const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-    const contenedorProductos = document.getElementById("contenedor_productos");
+    const minPrice = parseFloat(document.getElementById("minPrice").value);
+    const maxPrice = parseFloat(document.getElementById("maxPrice").value);
 
     // Filtra los productos que coincidan con el término de búsqueda en nombre o descripción
     const productosFiltrados = cp.listaDeProducto.filter((producto) => {
         const nombreEnMinusculas = producto.nombre.toLowerCase();
         const descripcionEnMinusculas = producto.descripcion.toLowerCase();
-        return nombreEnMinusculas.includes(searchTerm) || descripcionEnMinusculas.includes(searchTerm);
+        const precio = producto.precio;
+
+        const nombreCoincide = nombreEnMinusculas.includes(searchTerm);
+        const descripcionCoincide = descripcionEnMinusculas.includes(searchTerm);
+
+        // Filtra por precio mínimo y máximo si se especifican
+        const precioCoincide = (isNaN(minPrice) || precio >= minPrice) &&
+                              (isNaN(maxPrice) || precio <= maxPrice);
+
+        return (nombreCoincide || descripcionCoincide) && precioCoincide;
     });
 
     // Borra el contenido actual del contenedor de productos
+    const contenedorProductos = document.getElementById("contenedor_productos");
     contenedorProductos.innerHTML = "";
 
     // Muestra los productos filtrados
@@ -437,7 +448,12 @@ class Producto {
     });
 }
 
+
 // Agrega un evento click al botón de búsqueda
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", buscarProductos);
+
+const filterButton = document.getElementById("filterButton");
+filterButton.addEventListener("click", buscarProductos);
+
   
